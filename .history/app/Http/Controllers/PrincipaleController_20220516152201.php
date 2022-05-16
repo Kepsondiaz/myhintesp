@@ -14,7 +14,6 @@ class PrincipaleController extends Controller
             $fichiers = DB::table('users')
             ->join('fichiers', 'users.id', '=', 'fichiers.user_id')
             ->select('users.name', 'fichiers.*')
-            ->orderBy('created_at', 'desc')
             ->get();
             return view('dashboard', compact('fichiers'));
         }
