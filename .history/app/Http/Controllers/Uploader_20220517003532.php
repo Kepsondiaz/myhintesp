@@ -58,8 +58,8 @@ class Uploader extends Controller
                                   else
                                   {
                                         session()->flash('message_danger', 'La taille de ce fichier n\'est pas autorisée ! '); // affichage de message d'erreur
-                                        return view('upload', compact('departements'));
-                                        // return redirect()->back();
+                                        // return view('upload', compact('departements'));
+                                        return redirect()->back();
                                   }
      
                        

@@ -6,7 +6,7 @@
             <tr>
                 <th scope="col">Nom du fichier</th>
                 <th scope="col">Uploader</th>
-                <th scope="col">Taille(ko)</th>
+                <th scope="col">Taille</th>
                 <th scope="col">Date d'upload</th>
                 <th scope="col">Téléchagement</th>
               </tr>
@@ -20,7 +20,7 @@
                     <td>{{$fichier->name}}</td>
                     <td>{{$fichier->size_fichier}}</td>
                     <td>{{$fichier->created_at}}</td>
-                    <td><a href=" {{url('/download', $fichier->url_fichier)}} " class="btn btn-success">Télécharger</a></td>
+                    <td><a href=" {{url('/download', $fichier->url_fichier)}} ">{{$fichier->nom_fichier}}</a></td>
                 </tr>
                 {{-- <div class="fichier_recup">
                     <p>

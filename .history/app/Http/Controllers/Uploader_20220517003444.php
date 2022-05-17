@@ -38,7 +38,7 @@ class Uploader extends Controller
                          if($extenFileUpload == 'pdf' || $extenFileUpload == 'PDF' || $extenFileUpload == 'zip' || $extenFileUpload == 'ZIP')
                          {
                               // conndition pour uploader un fichier
-                                  if($sizeFileUpload <= 5000000)
+                                  if($sizeFileUpload <= 50000000)
                                   {
                                        $fileName = time().'.'.$extenFileUpload;
                                        $request->fichier->move('myhintesp_public_doc', $fileName);
@@ -58,8 +58,8 @@ class Uploader extends Controller
                                   else
                                   {
                                         session()->flash('message_danger', 'La taille de ce fichier n\'est pas autorisée ! '); // affichage de message d'erreur
-                                        return view('upload', compact('departements'));
-                                        // return redirect()->back();
+                                        // return view('upload', compact('departements'));
+                                        return redirect()->back();
                                   }
      
                        

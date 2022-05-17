@@ -32,7 +32,7 @@
             </div>
             <div class="mb-3">
                 <label for="matieres" class="form-label">Matieres</label>
-                <select class="form-control" name="matieres" id="matieres" required>
+                <select class="form-control" name="matieres" id="matieres" >
                     {{-- options matieres --}}
                 </select>
             </div>

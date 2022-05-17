@@ -26,13 +26,13 @@
             </div>
             <div class="mb-3">
                 <label for="filieres" class="form-label">Filières</label>
-                <select class="form-control" name="filieres" id="filieres" required>
+                <select class="form-control" name="filieres" id="filieres" >
                         {{-- options filieres --}}
                 </select>  
             </div>
             <div class="mb-3">
                 <label for="matieres" class="form-label">Matieres</label>
-                <select class="form-control" name="matieres" id="matieres" required>
+                <select class="form-control" name="matieres" id="matieres" >
                     {{-- options matieres --}}
                 </select>
             </div>
@@ -57,11 +57,20 @@
             </div>
             <br>
             <div class="input-group mb-3">
-                <input class="form-control" type="file" name="fichier" id="uploader" required>
+                <input class="form-control" type="file" name="fichier" id="uploader">
                 <label class="input-group-text" for="">choisir un fichier</label>           
              </div>
            <button class="btnn btn-primary" >Uploader</button>
         </form>
+    
+    
+        @if( $errors->first() )
+        <ul>
+          @foreach ($errors->all() as $error)
+            <li>{{ $error }}</li>
+          @endforeach
+        </ul>
+      @endif
     
     </div>
     

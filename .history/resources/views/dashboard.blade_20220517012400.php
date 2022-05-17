@@ -20,7 +20,7 @@
                     <td>{{$fichier->name}}</td>
                     <td>{{$fichier->size_fichier}}</td>
                     <td>{{$fichier->created_at}}</td>
-                    <td><a href=" {{url('/download', $fichier->url_fichier)}} " class="btn btn-success">Télécharger</a></td>
+                    <td><a href=" {{url('/download', $fichier->url_fichier)}} " class="btn btn-">Télécharger</a></td>
                 </tr>
                 {{-- <div class="fichier_recup">
                     <p>
