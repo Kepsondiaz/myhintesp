@@ -11,8 +11,8 @@ class PrincipaleController extends Controller
         public function index(Request $request)
         {
             $fichiers = DB::table('fichiers')
-            ->join('matieres', 'matieres.id', '=', 'fichiers.matiere_id')
-            ->select('matieres.nom_matiere', 'matieres.semestres', 'fichiers.*')
+            ->join('fichiers', 'users.id', '=', 'fichiers.user_id')
+            ->select('users.name', 'fichiers.*')
             ->orderBy('created_at', 'desc')
             ->get();
             return view('dashboard', compact('fichiers'));

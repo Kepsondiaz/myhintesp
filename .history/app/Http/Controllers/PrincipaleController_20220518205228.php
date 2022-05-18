@@ -12,7 +12,7 @@ class PrincipaleController extends Controller
         {
             $fichiers = DB::table('fichiers')
             ->join('matieres', 'matieres.id', '=', 'fichiers.matiere_id')
-            ->select('matieres.nom_matiere', 'matieres.semestres', 'fichiers.*')
+            ->select('matieres.nom_', 'fichiers.*')
             ->orderBy('created_at', 'desc')
             ->get();
             return view('dashboard', compact('fichiers'));

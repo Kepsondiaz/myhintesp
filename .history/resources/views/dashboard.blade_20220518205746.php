@@ -6,8 +6,8 @@
             <tr>
                 <th scope="col">Nom du fichier</th>
                 <th scope="col">Cours</th>
-                <th scope="col">Semestres</th>
                 <th scope="col">Taille(ko)</th>
+                <th scope="col">Semestres</th>
                 <th scope="col">Téléchagement</th>
               </tr>
         </thead>

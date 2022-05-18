@@ -15,6 +15,7 @@ class PrincipaleController extends Controller
             ->select('matieres.nom_matiere', 'matieres.semestres', 'fichiers.*')
             ->orderBy('created_at', 'desc')
             ->get();
+            // dd($fichiers);
             return view('dashboard', compact('fichiers'));
         }
 
