@@ -1,6 +1,9 @@
 <?php
 
+
 namespace App\Http\Controllers;
+
+
 
 use App\Models\fichiers;
 use Illuminate\Http\Request;
@@ -20,6 +23,8 @@ class Uploader extends Controller
 
     public function store(Request $request)
     {
+     // ini_set('post_max_size','100M');
+     // ini_set('upload_max_filesize','100M');
                $departements = DB::table('departements')->get();
 
                if (request()->hasFile('fichier'))
@@ -32,13 +37,13 @@ class Uploader extends Controller
 
 
                     // $extensions = array('pdf', 'PDF', 'zip', 'ZIP');
-                    
+
                     try
                     {
                          if($extenFileUpload == 'pdf' || $extenFileUpload == 'PDF' || $extenFileUpload == 'zip' || $extenFileUpload == 'ZIP')
                          {
                               // conndition pour uploader un fichier
-                                  if($sizeFileUpload <= 5000000)
+                                  if($sizeFileUpload < 5000000)
                                   {
                                        $fileName = time().'.'.$extenFileUpload;
                                        $request->fichier->move('myhintesp_public_doc', $fileName);
@@ -51,7 +56,7 @@ class Uploader extends Controller
                                              'matiere_id' => $request->matieres,
                                              'created_at' => $date_courante,
                                         ]);
-     
+
                                         session()->flash('message_succes', 'fichier uploader avec succé !');
                                         return view('upload', compact('departements'));
                                   }
@@ -61,30 +66,29 @@ class Uploader extends Controller
                                         return view('upload', compact('departements'));
                                         // return redirect()->back();
                                   }
-     
-                       
-                         } 
+
+
+                         }
                          else
                          {
                           session()->flash('message_danger', 'Seules les extensions \'zip\' ou \'pdf\' sont autorisées ! '); // affichage de message d'erreur
                           return redirect()->back();
                          }
-  
-                    } 
+
+                    }
                     catch(\Exception $exception)
                     {
                          return " Erreur de Chargement";
                     }
-                    
+
                }
                else
                {
 
                     return view('upload', compact('departements'));
                }
-
+               
     }
-
     // fonction concernant le dropdown menu
     public function getfiliere($id)
     {
