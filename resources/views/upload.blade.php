@@ -32,9 +32,7 @@
             </div>
             <div class="mb-3">
                 <label for="matieres" class="form-label">Matieres</label>
-                <select class="form-control" name="matieres" id="matieres" required>
-                    {{-- options matieres --}}
-                </select>
+                <input type="text" class="form-control" name="matieres" id="matieres" required>
             </div>
             <div class="mb-3">
                 <label for="niveaux"  class="form-label">Niveaux</label>
