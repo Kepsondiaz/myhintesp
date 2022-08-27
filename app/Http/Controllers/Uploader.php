@@ -52,12 +52,13 @@ class Uploader extends Controller
                                              'tmp_url_fichier' => $fileName,
                                              'tmp_nom_fichier' => $nameFileUpload,
                                              'tmp_size_fichier' => $sizeFileUpload,
+                                             'valider' => 0,
                                              'user_id' => $request->user()->id,
                                              'matiere_id' => $request->matieres,
                                              'created_at' => $date_courante,
                                         ]);
 
-                                        session()->flash('message_succes', 'fichier uploader avec succé !');
+                                        session()->flash('message_succes', 'fichier uploader avec succé, il sera valider par les admins. Merci de vôtre passage!');
                                         return view('upload', compact('departements'));
                                   }
                                   else

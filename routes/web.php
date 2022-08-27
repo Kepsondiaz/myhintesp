@@ -4,7 +4,10 @@ use App\Http\Controllers\AffichageController;
 use App\Http\Controllers\Downloads;
 use App\Http\Controllers\PrincipaleController;
 use App\Http\Controllers\Uploader;
+use App\Http\Controllers\adminController;
+use App\Http\Controllers\validerTmpFichiers;
 use Illuminate\Support\Facades\Route;
+use PhpParser\Node\Expr\FuncCall;
 
 /*
 |--------------------------------------------------------------------------
@@ -40,6 +43,12 @@ Route::middleware([
     
     Route::get('/search', [PrincipaleController::class, 'search']);
     Route::post('/search', [PrincipaleController::class, 'search']);
+
+    Route::prefix('admin')->group(function(){
+        Route::resource('/dashboard', 'App\Http\Controllers\adminController');
+        Route::get('/valider/{id}', [validerTmpFichiers::class, 'valider'])->name('valider');
+        Route::get('/supprimer/{id}', [validerTmpFichiers::class, 'supprimer'])->name('supprimer');
+    });
 });
 
 Route::fallback(function() {

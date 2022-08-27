@@ -54,26 +54,28 @@
         <thead class="thead-primary">
             <tr>
                 <th scope="col">Nom du fichier</th>
-                <th scope="col">Cours</th>
+                <th scope="col">Matieres</th>
                 <th scope="col">Semestres</th>
-                <th scope="col">Taille(ko)</th>
-              </tr>
+                <th scope="col">Niveau</th>
+                <th scope="col">Filieres</th>
+                <th scope="col">Departement</th>
+            </tr>
         </thead>
         <tbody>
 
-        
-            @foreach ($fichiers as $fichier)
+             @foreach ($tmp_fichiers as $tmp_fichier)
                 <tr>
-                    <th scope="row">{{$fichier->nom_fichier}}</th>
-                    <td>{{$fichier->nom_matiere}}</td> 
-                    <td>{{$fichier->semestres}}</td> 
-                    <td>{{$fichier->size_fichier}}</td> 
-                    {{-- <td><a href=" {{url('/download', $fichier->url_fichier)}} " class="btn btn-success">Télécharger</a></td> --}}
+                    <td>{{$tmp_fichier->tmp_nom_fichier}}</td>
+                    <td>{{$tmp_fichier->matieres->nom_matiere}}</td>
+                    <td>{{$tmp_fichier->matieres->semestres}}</td>
+                    <td>{{$tmp_fichier->matieres->niveau_matiere}}</td>
+                    <td>{{$tmp_fichier->matieres->filieres->intitule}}</td>
+                    <td>{{$tmp_fichier->matieres->filieres->departements->nom}}</td>
                 </tr>
-            @endforeach
+            @endforeach 
     </tbody>
     </table>
-    <span>{{ $fichiers->links()}}</span> 
+    <span>{{ $tmp_fichiers->links()}}</span> 
 </div>
 
 
