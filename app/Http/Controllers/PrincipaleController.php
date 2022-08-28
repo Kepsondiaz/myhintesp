@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+
 use App\Models\tmp_fichiers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+
 
 
 class PrincipaleController extends Controller
@@ -18,13 +20,13 @@ class PrincipaleController extends Controller
         public function search(Request $request)
         {
                 $name = $request->search;
-                $fichiers_search = DB::table('fichiers')
-                ->join('matieres', 'matieres.id', '=', 'fichiers.matiere_id')
-                ->select('matieres.nom_matiere', 'matieres.semestres', 'fichiers.*')
-                ->where('nom_fichier', 'like', $name)
-                ->paginate(2);
-                 return view('search', compact('fichiers_search'));   
-                
+               $fichiers_search = DB::table('tmp_fichiers')
+               ->join('matieres', 'matieres.id', '=', 'tmp_fichiers.matiere_id')
+               ->select('matieres.nom_matiere', 'matieres.semestres', 'tmp_fichiers.*')
+               ->where('tmp_nom_fichier', 'like', $name)
+               ->paginate(2);
+                return view('search', compact('fichiers_search'));  
+        
         }
 
 }
