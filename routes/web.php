@@ -23,7 +23,7 @@ use PhpParser\Node\Expr\FuncCall;
 Route::get('/', [AffichageController::class, 'index']);
 
 Route::middleware([
-    'auth:sanctum',
+    'auth:sanctum', 'verified',
     config('jetstream.auth_session'),
     'verified'
 ])->group(function () {
