@@ -15,4 +15,6 @@ yarn-error.log
 /storage/app/myhintesp_public_doc
 /.history
 /public/myhintesp_public_doc/
-
+/storage/debugbar/
+/public/myhintesp_public_doc_tmp/
+database/seeders/
