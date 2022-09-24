@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('nom_matiere');
             $table->enum('niveau_matiere', ['dut1-dst1','dut2-dst2', 'dic1-licence', 'dic2-master1', 'dic3-master2']);
-            $table->enum('semestres', ['Semestre1', 'Semestre2']);
+            $table->string('semestres');
             $table->foreignId('filiere_id')->constrained('filieres');
             $table->timestamps();
         });
