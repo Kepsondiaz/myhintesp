@@ -20,7 +20,11 @@ class filieres extends Seeder
                 'departement_id' => 1
             ],
 
-            [   'intitule' => 'Industries Chimiques Et AgroAlimentaires',
+            [   'intitule' => 'Chimie',
+                'departement_id' => 1
+            ],
+
+            [   'intitule' => 'Industries AgroAlimentaires',
                 'departement_id' => 1
             ],
 
