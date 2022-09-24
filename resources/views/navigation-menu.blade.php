@@ -17,9 +17,52 @@
                         {{ __('Dashboard') }}
                     </x-jet-nav-link>    
                 </li>
+
                 <li class="nav-item">
                     <x-jet-nav-link href="{{ route('upload') }}" :active="request()->routeIs('upload')">
                         {{ __('Uploader') }}
+                    </x-jet-nav-link>  
+                </li>
+
+                <li class="nav-item">
+                    <x-jet-nav-link >
+                        {{ __('|') }}
+                    </x-jet-nav-link>  
+                </li>
+
+                <li class="nav-item">
+                    <x-jet-nav-link href="{{ route('genie-info-et-telecom-reseaux') }}" :active="request()->routeIs('genie-info-et-telecom-reseaux')">
+                        {{ __('Génie Inf') }}
+                    </x-jet-nav-link>  
+                </li>
+
+                <li class="nav-item">
+                    <x-jet-nav-link href="{{ route('genie-mecanique') }}" :active="request()->routeIs('genie-mecanique')">
+                        {{ __('Génie Méca') }}
+                    </x-jet-nav-link>  
+                </li>
+
+                <li class="nav-item">
+                    <x-jet-nav-link href="{{ route('genie-electrique') }}" :active="request()->routeIs('genie-electrique')">
+                        {{ __('Génie Elec') }}
+                    </x-jet-nav-link>  
+                </li>
+
+                <li class="nav-item">
+                    <x-jet-nav-link href="{{ route('genie-civil') }}" :active="request()->routeIs('genie-civil')">
+                        {{ __('Génie Civil') }}
+                    </x-jet-nav-link>  
+                </li>
+
+                <li class="nav-item">
+                    <x-jet-nav-link href="{{ route('gcba') }}" :active="request()->routeIs('gcba')">
+                        {{ __('GCBA') }}
+                    </x-jet-nav-link>  
+                </li>
+
+                <li class="nav-item">
+                    <x-jet-nav-link href="{{ route('gestion') }}" :active="request()->routeIs('gestion')">
+                        {{ __('Gestion') }}
                     </x-jet-nav-link>  
                 </li>
 
