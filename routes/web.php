@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AffichageController;
+use App\Http\Controllers\DepartementsFichiers;
 use App\Http\Controllers\Downloads;
 use App\Http\Controllers\PrincipaleController;
 use App\Http\Controllers\Uploader;
@@ -32,7 +33,18 @@ Route::middleware([
     // })->name('dashboard');
     Route::get('/upload', [Uploader::class, 'index'])->name('upload');
     Route::post('/upload', [Uploader::class, 'store'])->name('upload');
-    
+
+    Route::get('/genie-info-et-telecom-reseaux', [DepartementsFichiers::class, 'genieInfo'])->name('genie-info-et-telecom-reseaux');
+    Route::get('/genie-mecanique', [DepartementsFichiers::class, 'genieMeca'])->name('genie-mecanique');
+    Route::get('/genie-electrique', [DepartementsFichiers::class, 'genieElec'])->name('genie-electrique');
+    Route::get('/genie-civil', [DepartementsFichiers::class, 'genieCivil'])->name('genie-civil');
+    Route::get('/gcba', [DepartementsFichiers::class, 'gcba'])->name('gcba');
+    Route::get('/gestion', [DepartementsFichiers::class, 'gestion'])->name('gestion');
+
+
+
+
+
     Route::get('getfiliere/{id}', [Uploader::class, 'getfiliere']);
     Route::get('getmatiere/{id}', [Uploader::class, 'getmatiere']);
     
