@@ -106,7 +106,7 @@
                     $('#matieres').empty();
                     $('#matieres').append(`<option value="0" disabled selected>choisir une Matiere*</option>`);
                     response.forEach(element => {
-                        $('#matieres').append(`<option value="${element['id']}">${element['nom_matiere']}</option>`);
+                        $('#matieres').append(`<option value="${element['id']}">${element['nom_matiere']} | ${element['niveau_matiere']} | ${element['semestres']}</option>`);
                         });
                     }
                 });
