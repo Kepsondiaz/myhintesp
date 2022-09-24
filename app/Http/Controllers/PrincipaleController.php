@@ -13,8 +13,9 @@ class PrincipaleController extends Controller
 {
         public function index(Request $request)
         {
-             $tmp_fichiers = tmp_fichiers::with('matieres.filieres.departements')->where('valider', 1)->orderby('created_at', 'desc')->paginate(15); 
-             return view('dashboard', compact('tmp_fichiers'));
+
+              $tmp_fichiers = tmp_fichiers::with('matieres.filieres.departements')->where('valider', 1)->orderby('created_at', 'desc')->paginate(15);
+              return view('dashboard', compact('tmp_fichiers'));
         }
 
         public function search(Request $request)
