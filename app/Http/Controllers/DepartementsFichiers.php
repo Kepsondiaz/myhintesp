@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\matieres;
+use App\Models\tmp_fichiers;
 use Illuminate\Http\Request;
 use PhpParser\Node\Expr\FuncCall;
 
@@ -9,32 +11,32 @@ class DepartementsFichiers extends Controller
 {
     public function genieInfo()
     {
-        return "salut";
+        return view('viewDepartements.genieInfo');
     }
 
     public function genieMeca()
     {
-        return "salut";
+        return view('viewDepartements.genieInfo');
     }
 
     public function genieElec()
     {
-        return "salut";
+        return view('viewDepartements.genieInfo');
     }
 
     public function genieCivil()
     {
-        return "salut";
+        return view('viewDepartements.genieInfo');
     }
 
     public function gcba()
     {
         
-        return "salut";
+        return view('viewDepartements.genieInfo');
     }
 
     public function gestion()
     {
-        return "salut";
+        return view('viewDepartements.genieInfo');
     }
 }
