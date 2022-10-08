@@ -11,14 +11,14 @@
         <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
         <script src="https://kit.fontawesome.com/26ef44b318.js" crossorigin="anonymous"></script>
         <!-- Styles -->
-        <link rel="stylesheet" href="{{ mix('css/app.css') }}">
+        <link rel="stylesheet" href="{{URL::to('/css/app.css')}}">
         <link href="https://unpkg.com/filepond@^4/dist/filepond.css" rel="stylesheet" />        
 
 
         @livewireStyles
 
         <!-- Scripts -->
-        <script src="{{ mix('js/app.js') }}" defer></script>
+        <script src="{{ URL::to('/js/app.js')}}" defer></script>
     </head>
     <body class="font-sans antialiased bg-light">
         <x-jet-banner />
