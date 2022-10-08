@@ -16,25 +16,25 @@ class filieres extends Seeder
     public function run()
     {
         DB::table('filieres')->insert([
-            [   'intitule' => 'Biologie Appliquée',
-                'departement_id' => 1
-            ],
+            // [   'intitule' => 'Biologie Appliquée',
+            //     'departement_id' => 1
+            // ],
 
-            [   'intitule' => 'Chimie',
-                'departement_id' => 1
-            ],
+            // [   'intitule' => 'Chimie',
+            //     'departement_id' => 1
+            // ],
 
-            [   'intitule' => 'Industries AgroAlimentaires',
-                'departement_id' => 1
-            ],
+            // [   'intitule' => 'Industries AgroAlimentaires',
+            //     'departement_id' => 1
+            // ],
 
-            [   'intitule' => 'Génie Civile',
-                'departement_id' => 2
-            ],
+            // [   'intitule' => 'Génie Civile',
+            //     'departement_id' => 2
+            // ],
 
-            [   'intitule' => 'Génie Electique',
-                'departement_id' => 3
-            ],
+            // [   'intitule' => 'Génie Electique',
+            //     'departement_id' => 3
+            // ],
             
             [   'intitule' => 'informatique',
                 'departement_id' => 4
@@ -44,13 +44,13 @@ class filieres extends Seeder
                 'departement_id' => 4
             ],
 
-            [   'intitule' => 'Génie Mécanique Et Productique',
-                'departement_id' => 5
-            ],
+            // [   'intitule' => 'Génie Mécanique Et Productique',
+            //     'departement_id' => 5
+            // ],
 
-            [   'intitule' => 'Comptabilité Et Gestion Des Organisations',
-                'departement_id' => 6
-            ],
+            // [   'intitule' => 'Comptabilité Et Gestion Des Organisations',
+            //     'departement_id' => 6
+            // ],
             
         ]);
     }

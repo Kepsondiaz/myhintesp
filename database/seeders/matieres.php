@@ -16,26 +16,26 @@ class matieres extends Seeder
     public function run()
     {
         DB::table('matieres')->insert([
-          ['nom_matiere' => 'chimie',
-          'niveau_matiere' => 'dut1-dst1',
-          'semestres' => 'S1',
-          'filiere_id'=> 1 
-          ],          
-          ['nom_matiere' => 'Biologie',
-          'niveau_matiere' => 'dic1-licence',
-          'semestres' => 'S1',
-          'filiere_id'=> 1 
-          ], 
-          ['nom_matiere' => 'civil',
-          'niveau_matiere' => 'dic2-master1',
-          'semestres' => 'semestre2',
-          'filiere_id'=> 4
-          ],
-          ['nom_matiere' => 'Biologie',
-          'niveau_matiere' => 'dic1-licence',
-          'semestres' => 'semestre2',
-          'filiere_id'=> 3 
-          ],
+          // ['nom_matiere' => 'chimie',
+          // 'niveau_matiere' => 'dut1-dst1',
+          // 'semestres' => 'S1',
+          // 'filiere_id'=> 1 
+          // ],          
+          // ['nom_matiere' => 'Biologie',
+          // 'niveau_matiere' => 'dic1-licence',
+          // 'semestres' => 'S1',
+          // 'filiere_id'=> 1 
+          // ], 
+          // ['nom_matiere' => 'civil',
+          // 'niveau_matiere' => 'dic2-master1',
+          // 'semestres' => 'semestre2',
+          // 'filiere_id'=> 4
+          // ],
+          // ['nom_matiere' => 'Biologie',
+          // 'niveau_matiere' => 'dic1-licence',
+          // 'semestres' => 'semestre2',
+          // 'filiere_id'=> 3 
+          // ],
 
           /* ---- dut1-dst1 info et RT */
           ['nom_matiere' => 'Algo1',
