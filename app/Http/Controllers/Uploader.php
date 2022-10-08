@@ -3,9 +3,10 @@
 
 namespace App\Http\Controllers;
 
-
-
+use App\Models\departements;
 use App\Models\fichiers;
+use App\Models\filieres;
+use App\Models\matieres;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
@@ -25,8 +26,21 @@ class Uploader extends Controller
     {
      // ini_set('post_max_size','100M');
      // ini_set('upload_max_filesize','100M');
-               $departements = DB::table('departements')->get();
-
+               // $departements = DB::table('departements')->get();
+               $departements = departements::create([
+                    'nom' => $request->departement
+               ]);
+               $filieres = filieres::create([
+                    'intitule' => $request->filieres,
+                    'departement_id' => $departements->id
+               ]);
+               $matieres = matieres::create([
+                    'nom_matiere' => $request->matieres, 
+                    'niveau_matiere' => $request->niveaux, 
+                    'semestres' => $request->semestres,
+                    'filiere_id' => $filieres->id 
+               ]);
+               // dd($filieres, $departements, $matieres);
                if (request()->hasFile('fichier'))
                {
                     // dd($request->fichier);
@@ -53,8 +67,8 @@ class Uploader extends Controller
                                              'tmp_nom_fichier' => $nameFileUpload,
                                              'tmp_size_fichier' => $sizeFileUpload,
                                              'valider' => 0,
-                                             'user_id' => $request->user()->id,
-                                             'matiere_id' => $request->matieres,
+                                             // 'user_id' => $request->user()->id,
+                                             'matiere_id' => $matieres->id,
                                              'created_at' => $date_courante,
                                         ]);
 
@@ -79,7 +93,7 @@ class Uploader extends Controller
                     }
                     catch(\Exception $exception)
                     {
-                         return " Erreur de Chargement";
+                         return $exception;
                     }
 
                }
@@ -91,15 +105,15 @@ class Uploader extends Controller
                
     }
     // fonction concernant le dropdown menu
-    public function getfiliere($id)
-    {
-               $filieres = DB::table('filieres')->where('departement_id', $id)->get();
-               return  response()->json($filieres);
-    }
+//     public function getfiliere($id)
+//     {
+//                $filieres = DB::table('filieres')->where('departement_id', $id)->get();
+//                return  response()->json($filieres);
+//     }
 
-    public function getmatiere($id)
-    {
-               $matieres = DB::table('matieres')->where('filiere_id', $id)->get();
-               return  response()->json($matieres);
-    }
+//     public function getmatiere($id)
+//     {
+//                $matieres = DB::table('matieres')->where('filiere_id', $id)->get();
+//                return  response()->json($matieres);
+//     }
 }
