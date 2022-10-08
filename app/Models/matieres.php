@@ -10,11 +10,8 @@ use Illuminate\Database\Eloquent\Model;
 class matieres extends Model
 {
     use HasFactory;
-    public function fichiers()
-    {
-        return $this->hasMany(fichiers::class);
-    }
-
+    protected $fillable = ['filiere_id', 'nom_matiere', 'niveau_matiere', 'semestres'];
+    
     public function tmp_fichiers()
     {
         return $this->hasMany(tmp_fichiers::class);
@@ -22,6 +19,6 @@ class matieres extends Model
     
     public function filieres()
     {
-        return $this->belongsTo(filieres::class, 'filiere_id', 'id');
+        return $this->belongsTo(filieres::class, 'filiere_id');
     }
 }

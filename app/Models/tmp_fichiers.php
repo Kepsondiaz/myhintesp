@@ -9,10 +9,10 @@ use Illuminate\Database\Eloquent\Model;
 class tmp_fichiers extends Model
 {
     use HasFactory;
-    protected $guarded=[];
+    protected $fillable = ['matiere_id', 'valider', 'tmp_size_fichier', 'tmp_nom_fichier', 'tmp_url_fichier'];
     
     public function matieres()
     {
-        return $this->belongsTo(matieres::class, 'matiere_id', 'id');
+        return $this->belongsTo(matieres::class, 'matiere_id');
     }
 }

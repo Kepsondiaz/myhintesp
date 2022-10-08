@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class departements extends Model
 {
+    protected $fillable = ['departement_id', 'nom'];
     use HasFactory;
     public function filieres()
     {
