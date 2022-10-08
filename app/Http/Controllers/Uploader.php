@@ -93,7 +93,7 @@ class Uploader extends Controller
                     }
                     catch(\Exception $exception)
                     {
-                         return $exception;
+                         return 'Oups !! ceci est une erreur qui peut être liée à la taille du fichier que vous essayer d\'uploader.....';
                     }
 
                }
