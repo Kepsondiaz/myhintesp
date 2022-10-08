@@ -17,35 +17,36 @@
             @csrf
             <div class="mb-3">
                 <label for="departements" class="form-label">Départements</label>
-                <select class="form-control" name="" id="departements" required>
-                    <option value="">choisir un Départements</option>
-                    @foreach ($departements as $dpt)
-                       <option value="{{$dpt->id}}">{{$dpt->nom}}</option> 
-                    @endforeach
+                <select class="form-control" name="departement" id="departements" required>
+                    <option value="">choisir un Départements*</option>
+                    <option value="Génie Chimique et Biologie Appliquée">Génie Chimique et Biologie Appliquée</option>
+                    <option value="Génie Civile">Génie Civile</option>
+                    <option value="Génie Electrique">Génie Electrique</option>
+                    <option value="Génie Informatique">Génie Informatique</option>
+                    <option value="Génie Mécanique">Génie Mécanique</option>
+                    <option value="Gestion">Gestion</option>
                 </select>
             </div>
             <div class="mb-3">
                 <label for="filieres" class="form-label">Filières</label>
-                <select class="form-control" name="filieres" id="filieres" required>
-                        {{-- options filieres --}}
-                </select>  
+                <input class="form-control" type="text" name="filieres" id="filieres" required placeholder="entre la filiere">
             </div>
             <div class="mb-3">
                 <label for="matieres" class="form-label">Matieres</label>
-                {{-- <input type="text" class="form-control" name="matieres" id="matieres" required> --}}
-                <select class="form-control" name="matieres" id="matieres" required>
-                    {{-- options filieres --}}
-            </select> 
+                <input class="form-control" type="text" name="matieres" id="matieres" required placeholder="entrer la matiere">
             </div>
             <div class="mb-3">
                 <label for="niveaux"  class="form-label">Niveaux</label>
                 <select name="niveaux" id="niveaux" class="form-control" >
                     <option value="">choisir un Niveau*</option>
-                    <option value="dut1-dst1">dut1-dst1</option>
-                    <option value="dut2-dst2">dut2-dst2</option>
-                    <option value="dic1-licence">dic1-licence</option>
-                    <option value="dic2-master1">dic2-master1</option>
-                    <option value="dic3-master2">dic3-master2</option>
+                    <option value="dut1-dst1">DUT1-DST1</option>
+                    <option value="dut2-dst2">DUT2-DST2</option>
+                    <option value="licence">LICENCE</option>
+                    <option value="dic1">DIC1</option>
+                    <option value="master1">MASTER1</option>
+                    <option value="dic2">DIC2</option>
+                    <option value="master2">MASTER2</option>
+                    <option value="dic3">DIC3</option>
                 </select>
             </div>
             <div class="mb-3">
@@ -66,7 +67,7 @@
     
     </div>
     
-    {{-- javascript --}}
+    {{-- javascript
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
         <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script> 
         <script src="https://unpkg.com/filepond@^4/dist/filepond.js"></script>
@@ -111,7 +112,7 @@
                     }
                 });
             });
-        });
+        }); 
 
                     // // Get a reference to the file input element
                     // const inputElement = document.querySelector('input[id="uploader"]');
@@ -127,5 +128,5 @@
                     //     }
                         
                     // });
-        </script>
+        </script> --}}
 </x-app-layout>
