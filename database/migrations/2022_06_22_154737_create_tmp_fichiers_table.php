@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('tmp_nom_fichier');
             $table->integer('tmp_size_fichier');
             $table->integer('valider');
-            $table->foreignId('user_id')->constrained('users')->onDelete('cascade')->onUpdate('cascade');
+            // $table->foreignId('user_id')->constrained('users')->onDelete('cascade')->onUpdate('cascade');
             $table->foreignId('matiere_id')->constrained('matieres');
             $table->timestamps();
         });

@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('matieres', function (Blueprint $table) {
             $table->id();
             $table->string('nom_matiere');
-            $table->enum('niveau_matiere', ['dut1-dst1','dut2-dst2', 'dic1-licence', 'dic2-master1', 'dic3-master2']);
+            $table->string('niveau_matiere');
             $table->string('semestres');
             $table->foreignId('filiere_id')->constrained('filieres');
             $table->timestamps();
