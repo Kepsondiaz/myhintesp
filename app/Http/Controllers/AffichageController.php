@@ -10,7 +10,6 @@ class AffichageController extends Controller
 {
    public function index()
    {
-      $tmp_fichiers = tmp_fichiers::with('matieres.filieres.departements')->paginate(6); 
-        return view('welcome', compact('tmp_fichiers'));
+      return view('welcome');
    }
 }
