@@ -37,7 +37,7 @@
             </div>
             <div class="mb-3">
                 <label for="niveaux"  class="form-label">Niveaux</label>
-                <select name="niveaux" id="niveaux" class="form-control" >
+                <select name="niveaux" id="niveaux" class="form-control" required>
                     <option value="">choisir un Niveau*</option>
                     <option value="dut1-dst1">DUT1-DST1</option>
                     <option value="dut2-dst2">DUT2-DST2</option>
@@ -51,7 +51,7 @@
             </div>
             <div class="mb-3">
                 <label for="semestres"  class="form-label">Semestres</label>
-                <select name="semestres" id="semestres" class="form-control">
+                <select name="semestres" id="semestres" class="form-control" required>
                     <option value="">choisir une Semestre*</option>
                     <option value="semestre1">Semestre 1</option>
                     <option value="semestre2">Semestre 2</option>
