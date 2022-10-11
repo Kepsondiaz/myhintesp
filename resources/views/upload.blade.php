@@ -29,11 +29,11 @@
             </div>
             <div class="mb-3">
                 <label for="filieres" class="form-label">Filières</label>
-                <input class="form-control" type="text" name="filieres" id="filieres" required placeholder="entre la filiere">
+                <input class="form-control" type="text" name="filieres" id="filieres" required placeholder="ex: Informatique">
             </div>
             <div class="mb-3">
                 <label for="matieres" class="form-label">Matieres</label>
-                <input class="form-control" type="text" name="matieres" id="matieres" required placeholder="entrer la matiere">
+                <input class="form-control" type="text" name="matieres" id="matieres" required placeholder="ex: Mathématique">
             </div>
             <div class="mb-3">
                 <label for="niveaux"  class="form-label">Niveaux</label>
