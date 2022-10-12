@@ -29,7 +29,7 @@ class PrincipaleController extends Controller
                                ->select('departements.*','filieres.*','matieres.*', 'tmp_fichiers.*')
                                ->where('departements.nom', $request->departement)
                                ->where('valider', 1)
-                               ->paginate(2);
+                               ->paginate(15);
                         //        dd($fichiers_search);
                                return view('search', compact('fichiers_search'));
                                
@@ -43,7 +43,7 @@ class PrincipaleController extends Controller
                         ->select('departements.*','filieres.*','matieres.*', 'tmp_fichiers.*')
                         ->where('filieres.intitule', $request->filieres)
                         ->where('valider', 1)
-                        ->paginate(2);
+                        ->paginate(15);
                         return view('search', compact('fichiers_search'));
                 }
                 if($request->matieres)
@@ -55,7 +55,7 @@ class PrincipaleController extends Controller
                         ->select('departements.*','filieres.*','matieres.*', 'tmp_fichiers.*')
                         ->where('matieres.nom_matiere', $request->matieres)
                         ->where('valider', 1)
-                        ->paginate(2);
+                        ->paginate(15);
                         return view('search', compact('fichiers_search'));
                 }
                 if($request->niveaux)
@@ -67,7 +67,7 @@ class PrincipaleController extends Controller
                         ->select('departements.*','filieres.*','matieres.*', 'tmp_fichiers.*')
                         ->where('matieres.niveau_matiere', $request->niveaux)
                         ->where('valider', 1)
-                        ->paginate(2);
+                        ->paginate(15);
                         return view('search', compact('fichiers_search')); 
                 }
                 if($request->semestres)
@@ -79,7 +79,7 @@ class PrincipaleController extends Controller
                         ->select('departements.*','filieres.*','matieres.*', 'tmp_fichiers.*')
                         ->where('matieres.semestres', $request->semestres)
                         ->where('valider', 1)
-                        ->paginate(2);
+                        ->paginate(15);
                         return view('search', compact('fichiers_search')); 
                 }
                 // if($request->departement && $request->filieres && $request->matieres && $request->niveaux && $request->semestres)
