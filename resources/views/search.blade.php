@@ -47,5 +47,6 @@
             </tbody>
         </table>
 </div>
-    {{-- <span>{{ $fichiers_search->links()}}</span>  --}}
+    <br>
+     <span>{{ $fichiers_search->links()}}</span> 
 </x-app-layout>
