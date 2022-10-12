@@ -30,7 +30,7 @@
                     </x-jet-nav-link>  
                 </li>
 
-                <li class="nav-item">
+                {{-- <li class="nav-item">
                     <x-jet-nav-link href="{{ route('genie-info-et-telecom-reseaux') }}" :active="request()->routeIs('genie-info-et-telecom-reseaux')">
                         {{ __('Génie Inf') }}
                     </x-jet-nav-link>  
@@ -64,25 +64,25 @@
                     <x-jet-nav-link href="{{ route('gestion') }}" :active="request()->routeIs('gestion')">
                         {{ __('Gestion') }}
                     </x-jet-nav-link>  
-                </li>
+                </li> --}}
 
                 <li>
 
                 </li>
             </ul>
-            <form method="POST" action="/search">
+            {{-- <form method="POST" action="/search">
                 @csrf
                 <div class="input-group">
                     <input type="search" id="form1" name="search" class="form-control" />
                   {{-- <button type="button" >
                       <span>search</span>
                      
-                  </button> --}}
+                  </button> 
                   <div >
                     <input class="btn btn-primary" type="submit" name="value-search" id="" value="Rechercher">
                     </div>
               </div>
-            </form>
+            </form> --}}
             <!-- Right Side Of Navbar -->
             <ul class="navbar-nav align-items-baseline">
                 <!-- Teams Dropdown -->
