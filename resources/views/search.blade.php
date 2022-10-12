@@ -16,8 +16,15 @@
                 </tr>
             </thead>
             <tbody>
-
+                @if (count($fichiers_search)==0)
+                <tr>
+                    <center>
+                        <p class="btn btn-danger">Fichier non trouvé ......</p>
+                    </center>
+                </tr>
+                @endif
                 @foreach ($fichiers_search as $fichier_search)
+                {{-- {{dd($fichier_search->nom_matiere)}} --}}
                     <tr>
                         <th>
                             <div class="d-flex align-items-center">
@@ -30,11 +37,11 @@
                             <div class="ms-3">
                         </th>
                         <td>{{$fichier_search->tmp_nom_fichier}}</td>
-                        <td>{{$fichier_search->matieres->nom_matiere}}</td>
-                        <td>{{$fichier_search->matieres->semestres}}</td>
-                        <td>{{$fichier_search->matieres->niveau_matiere}}</td>
-                        <td>{{$fichier_search->matieres->filieres->intitule}}</td>
-                        <td>{{$fichier_search->matieres->filieres->departements->nom}}</td>
+                        <td>{{$fichier_search->nom_matiere}}</td>
+                        <td>{{$fichier_search->semestres}}</td>
+                        <td>{{$fichier_search->niveau_matiere}}</td>
+                        <td>{{$fichier_search->intitule}}</td>
+                        <td>{{$fichier_search->nom}}</td>
                         <td><a href=" {{url('/download', $fichier_search->tmp_url_fichier)}} " class="btn btn-success">Télécharger</a></td>                </tr>
                 @endforeach 
             </tbody>
