@@ -99,7 +99,9 @@ class PrincipaleController extends Controller
                 //         dd($fichiers_search);
                 //         return view('search', compact('fichiers_search'));     
                 // }
-        
+                        
+                $tmp_fichiers = tmp_fichiers::with('matieres.filieres.departements')->where('valider', 1)->orderby('created_at', 'desc')->paginate(15);
+                return view('dashboard', compact('tmp_fichiers'));
         }
 
 }
