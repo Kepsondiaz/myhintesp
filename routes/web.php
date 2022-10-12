@@ -81,7 +81,7 @@ Route::get('/upload', [Uploader::class, 'index'])->name('upload');
     // Route::get('getmatiere/{id}', [Uploader::class, 'getmatiere']);
     
     Route::get('/dashboard', [PrincipaleController::class, 'index'])->name('dashboard');
-    Route::post('/dashboard', [PrincipaleController::class, 'index'])->name('dashboard');
+    Route::post('/dashboard', [PrincipaleController::class, 'search'])->name('dashboard');
 
     Route::get('/download/{url_fichier}', [Downloads::class, 'download'])->name('download');
     
