@@ -45,7 +45,7 @@
                                     </select>
                                 </th>
                                 <th scope="col">
-                                    <input class="btn btn-success" type="submit">
+                                    <input class="btn btn-success" type="submit" value="Rechercher">
                                 </th>
                             </tr>
                         </thead>
