@@ -10,7 +10,7 @@
         @if (session()->has('message_succes'))
             <div class="alert alert-success" role="alert">
                 {{session()->get('message_succes')}}
-                <a href="/dashboard" >Voir les fichiers uploader</a>
+                <a href="{{url('/')}}" >Voir les fichiers uploader</a>
             </div>  
         @endif
         <form action="upload" method="POST" enctype="multipart/form-data">
