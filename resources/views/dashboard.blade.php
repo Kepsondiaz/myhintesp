@@ -2,7 +2,7 @@
     <x-slot name="header">
     </x-slot>
     <div class="container h-100">
-                <form action="{{url('/dashboard')}}" method="POST">
+                <form action="{{url('/')}}" method="POST" class="">
                     @csrf
                     <table class="table align-middle mb-0">
                         <thead class="thead-primary">
