@@ -53,7 +53,7 @@ class Uploader extends Controller
 
                     try
                     {
-                         if($extenFileUpload == 'pdf' || $extenFileUpload == 'PDF' || $extenFileUpload == 'zip' || $extenFileUpload == 'ZIP')
+                         if($extenFileUpload == 'pdf' || $extenFileUpload == 'PDF' || $extenFileUpload == 'zip' || $extenFileUpload == 'ZIP' || $extenFileUpload == 'png' || $extenFileUpload == 'PNG' || $extenFileUpload == 'jpg' || $extenFileUpload == 'JPG')
                          {
                               // conndition pour uploader un fichier
                                   if($sizeFileUpload < 5000000)
@@ -87,7 +87,7 @@ class Uploader extends Controller
                          }
                          else
                          {
-                          session()->flash('message_danger', 'Seules les extensions \'zip\' ou \'pdf\' sont autorisées ! '); // affichage de message d'erreur
+                          session()->flash('message_danger', 'Seules les extensions \'zip\', \'pdf\', \'png\' et \'jpg\'   sont autorisées ! '); // affichage de message d'erreur
                           return redirect()->back();
                          }
 
