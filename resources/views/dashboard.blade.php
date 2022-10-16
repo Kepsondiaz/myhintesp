@@ -89,6 +89,6 @@
                 </tbody>
             </table>
     </div>
-
+    <br>
     <span>{{ $tmp_fichiers->links()}}</span> 
 </x-app-layout>
