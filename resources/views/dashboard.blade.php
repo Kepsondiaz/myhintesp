@@ -2,7 +2,7 @@
     <x-slot name="header">
     </x-slot>
     <div class="container h-100">
-                <form action="{{url('/')}}" method="POST" class="">
+                <form action="" method="GET" class="">
                     @csrf
                     <table class="table align-middle mb-0">
                         <thead class="thead-primary">
@@ -79,12 +79,12 @@
                                 <div class="ms-3">
                             </th>
                             <td>{{$tmp_fichier->tmp_nom_fichier}}</td>
-                            <td>{{$tmp_fichier->matieres->nom_matiere}}</td>
-                            <td>{{$tmp_fichier->matieres->semestres}}</td>
-                            <td>{{$tmp_fichier->matieres->niveau_matiere}}</td>
-                            <td>{{$tmp_fichier->matieres->filieres->intitule}}</td>
-                            <td>{{$tmp_fichier->matieres->filieres->departements->nom}}</td>
-                            <td><a href=" {{url('/download', $tmp_fichier->tmp_url_fichier)}} " class="btn btn-success">Télécharger</a></td>                </tr>
+                            <td>{{$tmp_fichier->nom_matiere}}</td>
+                            <td>{{$tmp_fichier->semestres}}</td>
+                            <td>{{$tmp_fichier->niveau_matiere}}</td>
+                            <td>{{$tmp_fichier->intitule}}</td>
+                            <td>{{$tmp_fichier->nom}}</td>
+                            <td><a href=" {{url('/download', $tmp_fichier->tmp_url_fichier)}} " class="btn btn-success">Télécharger</a></td>               </tr>
                     @endforeach 
                 </tbody>
             </table>
