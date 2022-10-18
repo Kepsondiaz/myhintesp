@@ -31,11 +31,11 @@ class Uploader extends Controller
                     'nom' => $request->departement
                ]);
                $filieres = filieres::create([
-                    'intitule' => $request->filieres,
+                    'intitule' => strtolower($request->filieres),
                     'departement_id' => $departements->id
                ]);
                $matieres = matieres::create([
-                    'nom_matiere' => $request->matieres, 
+                    'nom_matiere' => strtolower($request->matieres), 
                     'niveau_matiere' => $request->niveaux, 
                     'semestres' => $request->semestres,
                     'filiere_id' => $filieres->id 
@@ -65,7 +65,7 @@ class Uploader extends Controller
                                         //  requête insertion d'un fichier dans la base de donnée
                                         DB::table('tmp_fichiers')->insert([
                                              'tmp_url_fichier' => $fileName,
-                                             'tmp_nom_fichier' => $nameFileUpload,
+                                             'tmp_nom_fichier' => strtolower($nameFileUpload),
                                              'tmp_size_fichier' => $sizeFileUpload,
                                              'valider' => 0,
                                              // 'user_id' => $request->user()->id,

@@ -20,64 +20,64 @@ class PrincipaleController extends Controller
 
         public function index(Request $request)
         {
-                if($request->departement)
+                if(strtolower($request->departement))
                 {
                         $tmp_fichiers = DB::table('tmp_fichiers')
                                ->join('matieres', 'matieres.id', '=', 'tmp_fichiers.matiere_id')
                                ->join('filieres', 'filieres.id', '=', 'matieres.filiere_id')
                                ->join('departements', 'departements.id', '=', 'filieres.departement_id')
                                ->select('departements.*','filieres.*','matieres.*', 'tmp_fichiers.*')
-                               ->where('departements.nom', $request->departement)
+                               ->where('departements.nom', strtolower($request->departement))
                                ->where('valider', 1)
                                ->paginate(15);
                         //        dd($tmp_fichiers);
                                return view('dashboard', compact('tmp_fichiers'));
                                
                 }
-                if($request->filieres)
+                if(strtolower($request->departement))
                 {
                         $tmp_fichiers = DB::table('tmp_fichiers')
                         ->join('matieres', 'matieres.id', '=', 'tmp_fichiers.matiere_id')
                         ->join('filieres', 'filieres.id', '=', 'matieres.filiere_id')
                         ->join('departements', 'departements.id', '=', 'filieres.departement_id')
                         ->select('departements.*','filieres.*','matieres.*', 'tmp_fichiers.*')
-                        ->where('filieres.intitule', $request->filieres)
+                        ->where('filieres.intitule', strtolower($request->departement))
                         ->where('valider', 1)
                         ->paginate(15);
                         return view('dashboard', compact('tmp_fichiers'));
                 }
-                if($request->matieres)
+                if(strtolower($request->matieres))
                 {
                         $tmp_fichiers = DB::table('tmp_fichiers')
                         ->join('matieres', 'matieres.id', '=', 'tmp_fichiers.matiere_id')
                         ->join('filieres', 'filieres.id', '=', 'matieres.filiere_id')
                         ->join('departements', 'departements.id', '=', 'filieres.departement_id')
                         ->select('departements.*','filieres.*','matieres.*', 'tmp_fichiers.*')
-                        ->where('matieres.nom_matiere', $request->matieres)
+                        ->where('matieres.nom_matiere', strtolower($request->matieres))
                         ->where('valider', 1)
                         ->paginate(15);
                         return view('dashboard', compact('tmp_fichiers'));
                 }
-                if($request->niveaux)
+                if(strtolower($request->niveaux))
                 {
                         $tmp_fichiers = DB::table('tmp_fichiers')
                         ->join('matieres', 'matieres.id', '=', 'tmp_fichiers.matiere_id')
                         ->join('filieres', 'filieres.id', '=', 'matieres.filiere_id')
                         ->join('departements', 'departements.id', '=', 'filieres.departement_id')
                         ->select('departements.*','filieres.*','matieres.*', 'tmp_fichiers.*')
-                        ->where('matieres.niveau_matiere', $request->niveaux)
+                        ->where('matieres.niveau_matiere', strtolower($request->niveaux))
                         ->where('valider', 1)
                         ->paginate(15);
                         return view('dashboard', compact('tmp_fichiers')); 
                 }
-                if($request->semestres)
+                if(strtolower($request->semestres))
                 {
                         $tmp_fichiers = DB::table('tmp_fichiers')
                         ->join('matieres', 'matieres.id', '=', 'tmp_fichiers.matiere_id')
                         ->join('filieres', 'filieres.id', '=', 'matieres.filiere_id')
                         ->join('departements', 'departements.id', '=', 'filieres.departement_id')
                         ->select('departements.*','filieres.*','matieres.*', 'tmp_fichiers.*')
-                        ->where('matieres.semestres', $request->semestres)
+                        ->where('matieres.semestres', strtolower($request->semestres))
                         ->where('valider', 1)
                         ->paginate(15);
                         return view('dashboard', compact('tmp_fichiers')); 
