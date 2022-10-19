@@ -5,56 +5,50 @@
         
     </div>
     <div class="container h-100">
-                <form action="" method="GET" class="">
+                <form action="" method="GET" class="row row-cols-lg-auto g-3">
                     @csrf
-                <!-- <div class="form-group"></div> -->
-                    <table class="table">
-                        <tbody class="thead-primary">
-                            <tr>
-                                <td scope="col">
-                                    <select class="form-control" name="departement" id="departements">
-                                        <option value="">choisir un Départements*</option>
-                                        <option value="Génie Chimique et Biologie Appliquée">Génie Chimique et Biologie Appliquée</option>
-                                        <option value="Génie Civile">Génie Civile</option>
-                                        <option value="Génie Electrique">Génie Electrique</option>
-                                        <option value="Génie Informatique">Génie Informatique</option>
-                                        <option value="Génie Mécanique">Génie Mécanique</option>
-                                        <option value="Gestion">Gestion</option>
-                                    </select>
-                                </td>
-                                <td scope="col">
-                                    <input class="form-control" type="text" name="filieres" id="filieres" placeholder="entrer une filière">
-                                </td>
-                                <td scope="col">
-                                    <input class="form-control" type="text" name="matieres" id="matieres" placeholder="entrer une matière">
-                                </td>
-                                <td scope="col">
-                                    <select name="niveaux" id="niveaux" class="form-control" >
-                                        <option value="">choisir un Niveau*</option>
-                                        <option value="dut1-dst1">DUT1-DST1</option>
-                                        <option value="dut2-dst2">DUT2-DST2</option>
-                                        <option value="licence">LICENCE</option>
-                                        <option value="dic1">DIC1</option>
-                                        <option value="master1">MASTER1</option>
-                                        <option value="dic2">DIC2</option>
-                                        <option value="master2">MASTER2</option>
-                                        <option value="dic3">DIC3</option>
-                                    </select>
-                                </td>
-                                <td scope="col">
-                                    <select name="semestres" id="semestres" class="form-control">
-                                        <option value="">choisir une Semestre*</option>
-                                        <option value="semestre1">Semestre 1</option>
-                                        <option value="semestre2">Semestre 2</option>
-                                    </select>
-                                </td>
-                                <td scope="col">
-                                    <input class="btn btn-success" type="submit" value="Rechercher">
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    <div class="col-sm-2">
+                        <select class="form-control" name="departement" id="departements">
+                            <option value="">choisir un Départements*</option>
+                            <option value="Génie Chimique et Biologie Appliquée">Génie Chimique et Biologie Appliquée</option>
+                            <option value="Génie Civile">Génie Civile</option>
+                            <option value="Génie Electrique">Génie Electrique</option>
+                            <option value="Génie Informatique">Génie Informatique</option>
+                            <option value="Génie Mécanique">Génie Mécanique</option>
+                            <option value="Gestion">Gestion</option>
+                        </select> 
+                    </div>
+                    <div class="col-sm-2">
+                        <input class="form-control" type="text" name="filieres" id="filieres" placeholder="entrer une filière">
+                    </div>
+                    <div class="col-sm-2">
+                        <input class="form-control" type="text" name="matieres" id="matieres" placeholder="entrer une matière">
+                    </div>
+                    <div class="col-sm-2">
+                        <select name="niveaux" id="niveaux" class="form-control" >
+                            <option value="">choisir un Niveau*</option>
+                            <option value="dut1-dst1">DUT1-DST1</option>
+                            <option value="dut2-dst2">DUT2-DST2</option>
+                            <option value="licence">LICENCE</option>
+                            <option value="dic1">DIC1</option>
+                            <option value="master1">MASTER1</option>
+                            <option value="dic2">DIC2</option>
+                            <option value="master2">MASTER2</option>
+                            <option value="dic3">DIC3</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-2">
+                        <select name="semestres" id="semestres" class="form-control">
+                            <option value="">choisir une Semestre*</option>
+                            <option value="semestre1">Semestre 1</option>
+                            <option value="semestre2">Semestre 2</option>
+                        </select> 
+                    </div>
+                    <div class="col-sm-2">
+                        <input class="btn btn-success" type="submit" value="Rechercher">
+                    </div>
                 </form>
+                <br>
             <table class="table align-middle mb-0 bg-white">
                 <thead class="thead-primary">
                     <tr>
