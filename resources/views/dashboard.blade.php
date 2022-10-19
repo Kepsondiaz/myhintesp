@@ -1,13 +1,17 @@
 <x-app-layout>
     <x-slot name="header">
     </x-slot>
+    <div>
+        
+    </div>
     <div class="container h-100">
                 <form action="" method="GET" class="">
                     @csrf
-                    <table class="table align-middle mb-0">
-                        <thead class="thead-primary">
+                <!-- <div class="form-group"></div> -->
+                    <table class="table">
+                        <tbody class="thead-primary">
                             <tr>
-                                <th scope="col">
+                                <td scope="col">
                                     <select class="form-control" name="departement" id="departements">
                                         <option value="">choisir un Départements*</option>
                                         <option value="Génie Chimique et Biologie Appliquée">Génie Chimique et Biologie Appliquée</option>
@@ -17,14 +21,14 @@
                                         <option value="Génie Mécanique">Génie Mécanique</option>
                                         <option value="Gestion">Gestion</option>
                                     </select>
-                                </th>
-                                <th scope="col">
-                                    <input class="form-control" type="text" name="filieres" id="filieres" placeholder="ex: Informatique">
-                                </th>
-                                <th scope="col">
-                                    <input class="form-control" type="text" name="matieres" id="matieres" placeholder="ex: Mathématique">
-                                </th>
-                                <th scope="col">
+                                </td>
+                                <td scope="col">
+                                    <input class="form-control" type="text" name="filieres" id="filieres" placeholder="filière">
+                                </td>
+                                <td scope="col">
+                                    <input class="form-control" type="text" name="matieres" id="matieres" placeholder="matière">
+                                </td>
+                                <td scope="col">
                                     <select name="niveaux" id="niveaux" class="form-control" >
                                         <option value="">choisir un Niveau*</option>
                                         <option value="dut1-dst1">DUT1-DST1</option>
@@ -36,19 +40,19 @@
                                         <option value="master2">MASTER2</option>
                                         <option value="dic3">DIC3</option>
                                     </select>
-                                </th>
-                                <th scope="col">
+                                </td>
+                                <td scope="col">
                                     <select name="semestres" id="semestres" class="form-control">
                                         <option value="">choisir une Semestre*</option>
                                         <option value="semestre1">Semestre 1</option>
                                         <option value="semestre2">Semestre 2</option>
                                     </select>
-                                </th>
-                                <th scope="col">
+                                </td>
+                                <td scope="col">
                                     <input class="btn btn-success" type="submit" value="Rechercher">
-                                </th>
+                                </td>
                             </tr>
-                        </thead>
+                        </tbody>
                     </table>
                 </form>
             <table class="table align-middle mb-0 bg-white">
@@ -65,7 +69,15 @@
                     </tr>
                 </thead>
                 <tbody>
-
+                    @if (count($tmp_fichiers)==0)
+                    <tr>
+                        <td>
+                            <center>
+                                <p class="btn btn-danger">Fichier non trouvé ......</p>
+                            </center>
+                        </td>
+                    </tr>
+                    @endif
                     @foreach ($tmp_fichiers as $tmp_fichier)
                         <tr>
                             <th>
