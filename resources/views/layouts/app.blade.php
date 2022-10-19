@@ -28,6 +28,7 @@
 
         <!-- Scripts -->
         <script src="{{ URL::to('/js/app.js')}}" defer></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1" user-scalable="no">
     </head>
     <body class="font-sans antialiased bg-light">
         <x-jet-banner />
