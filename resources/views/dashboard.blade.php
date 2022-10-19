@@ -23,10 +23,10 @@
                                     </select>
                                 </td>
                                 <td scope="col">
-                                    <input class="form-control" type="text" name="filieres" id="filieres" placeholder="filière">
+                                    <input class="form-control" type="text" name="filieres" id="filieres" placeholder="entrer une filière">
                                 </td>
                                 <td scope="col">
-                                    <input class="form-control" type="text" name="matieres" id="matieres" placeholder="matière">
+                                    <input class="form-control" type="text" name="matieres" id="matieres" placeholder="entrer une matière">
                                 </td>
                                 <td scope="col">
                                     <select name="niveaux" id="niveaux" class="form-control" >
