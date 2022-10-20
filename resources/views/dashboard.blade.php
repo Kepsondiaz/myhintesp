@@ -67,7 +67,7 @@
                     <tr>
                         <td>
                             <center>
-                                <p class="btn btn-danger">Fichier non trouvé ......</p>
+                                <p class="btn btn-danger">Aucun hints n'est disponible concernant vôtre rechercher. Souhaitez-vous ajouter un hint <a href="{{url("/upload")}}">Uploader un hint</a></p>
                             </center>
                         </td>
                     </tr>
