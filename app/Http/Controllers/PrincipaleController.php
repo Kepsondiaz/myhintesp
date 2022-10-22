@@ -84,20 +84,20 @@ class PrincipaleController extends Controller
                 }
                 // if($request->departement && $request->filieres && $request->matieres && $request->niveaux && $request->semestres)
                 // {
-                //         $tmp_fichiers = DB::table('tmp_fichiers')
-                //         ->join('matieres', 'matieres.id', '=', 'tmp_fichiers.matiere_id')
-                //         ->join('filieres', 'filieres.id', '=', 'matieres.filiere_id')
-                //         ->join('departements', 'departements.id', '=', 'filieres.departement_id')
-                //         ->select('departements.*','filieres.*','matieres.*', 'tmp_fichiers.*')
-                //         ->where('valider', 1)
-                //         ->where('departements.nom', $request->departement)
-                //         ->where('filieres.intitule', $request->filieres)
-                //         ->where('matieres.nom_matiere', $request->matieres)
-                //         ->where('matieres.niveau_matiere', $request->niveaux)
-                //         ->where('matieres.semestres', $request->semestres)
-                //         ->paginate(2);
-                //         dd($tmp_fichiers);
-                //         return view('search', compact('tmp_fichiers'));     
+                //          $tmp_fichiers = DB::table('tmp_fichiers')
+                //          ->join('matieres', 'matieres.id', '=', 'tmp_fichiers.matiere_id')
+                //          ->join('filieres', 'filieres.id', '=', 'matieres.filiere_id')
+                //          ->join('departements', 'departements.id', '=', 'filieres.departement_id')
+                //          ->select('departements.*','filieres.*','matieres.*', 'tmp_fichiers.*')
+                //          ->where('valider', 1)
+                //          ->where('departements.nom', $request->departement)
+                //          ->where('filieres.intitule', $request->filieres)
+                //          ->where('matieres.nom_matiere', $request->matieres)
+                //          ->where('matieres.niveau_matiere', $request->niveaux)
+                //          ->where('matieres.semestres', $request->semestres)
+                //          ->get();
+                //          dd($tmp_fichiers);
+                //          return view('search', compact('tmp_fichiers'));     
                 // }
                         
                 // $tmp_fichiers = tmp_fichiers::with('matieres.filieres.departements')->where('valider', 1)->orderby('created_at', 'desc')->paginate(15);
@@ -107,6 +107,7 @@ class PrincipaleController extends Controller
                 ->join('departements', 'departements.id', '=', 'filieres.departement_id')
                 ->select('departements.*','filieres.*','matieres.*', 'tmp_fichiers.*')
                 ->where('valider', 1)
+                ->orderBy('tmp_fichiers.created_at', 'desc')
                 ->paginate(15);
                 return view('dashboard', compact('tmp_fichiers'));
         }
