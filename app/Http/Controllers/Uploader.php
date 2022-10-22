@@ -48,7 +48,6 @@ class Uploader extends Controller
                     $extenFileUpload = $request->fichier->getClientOriginalExtension();
                     $sizeFileUpload = $request->fichier->getSize();
                     $nameFileUpload = $request->fichier->getClientOriginalName();
-                    dd($sizeFileUpload);
 
                     // $extensions = array('pdf', 'PDF', 'zip', 'ZIP');
 
