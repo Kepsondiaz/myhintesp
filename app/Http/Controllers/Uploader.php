@@ -4,9 +4,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\departements;
-use App\Models\fichiers;
 use App\Models\filieres;
 use App\Models\matieres;
+use App\Models\tmp_fichiers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
@@ -48,6 +48,7 @@ class Uploader extends Controller
                     $extenFileUpload = $request->fichier->getClientOriginalExtension();
                     $sizeFileUpload = $request->fichier->getSize();
                     $nameFileUpload = $request->fichier->getClientOriginalName();
+                    dd($sizeFileUpload);
 
                     // $extensions = array('pdf', 'PDF', 'zip', 'ZIP');
 
@@ -56,14 +57,23 @@ class Uploader extends Controller
                          if($extenFileUpload == 'pdf' || $extenFileUpload == 'PDF' || $extenFileUpload == 'zip' || $extenFileUpload == 'ZIP' || $extenFileUpload == 'png' || $extenFileUpload == 'PNG' || $extenFileUpload == 'jpg' || $extenFileUpload == 'JPG')
                          {
                               // conndition pour uploader un fichier
-                                  if($sizeFileUpload < 5000000)
+                                  if($sizeFileUpload <= 4000000)
                                   {
                                    //     $fileName = time().'.'.$extenFileUpload;
                                    $fileName = $nameFileUpload.'.'.$extenFileUpload;
                                        $request->fichier->move('myhintesp_public_doc_tmp', $fileName);
                                    //     $request->fichier->move('myhintesp_public_doc', $fileName);
                                         //  requête insertion d'un fichier dans la base de donnée
-                                        DB::table('tmp_fichiers')->insert([
+                                        // DB::table('tmp_fichiers')->insert([
+                                        //      'tmp_url_fichier' => $fileName,
+                                        //      'tmp_nom_fichier' => strtolower($nameFileUpload),
+                                        //      'tmp_size_fichier' => $sizeFileUpload,
+                                        //      'valider' => 0,
+                                        //      // 'user_id' => $request->user()->id,
+                                        //      'matiere_id' => $matieres->id,
+                                        //      'created_at' => $date_courante,
+                                        // ]);
+                                        $tmp_fichiers= tmp_fichiers::create([
                                              'tmp_url_fichier' => $fileName,
                                              'tmp_nom_fichier' => strtolower($nameFileUpload),
                                              'tmp_size_fichier' => $sizeFileUpload,
@@ -78,7 +88,7 @@ class Uploader extends Controller
                                   }
                                   else
                                   {
-                                        session()->flash('message_danger', 'La taille de ce fichier n\'est pas autorisée ! '); // affichage de message d'erreur
+                                        session()->flash('message_danger', 'La taille de ce fichier n\'est pas autorisée . '); // affichage de message d'erreur
                                         return view('upload', compact('departements'));
                                         // return redirect()->back();
                                   }
@@ -105,7 +115,7 @@ class Uploader extends Controller
                }
                
     }
-    // fonction concernant le dropdown menu
+// fonction concernant le dropdown menu
 //     public function getfiliere($id)
 //     {
 //                $filieres = DB::table('filieres')->where('departement_id', $id)->get();
