@@ -49,9 +49,15 @@
                 <div class="position-absolute top-100 start-50 translate-middle-x">
                     <p>
                         <h1>myhintesp</h1>
-                        <img src="https://img.icons8.com/sf-regular-filled/2x/compare.png" width="500px" alt="">
+                        <br>
+                        @if (session()->has('message'))
+                        <div class="alert alert-danger" role="alert">
+                            {{session()->get('message')}}
+                        </div>  
+                    @endif
+                        <img src="images/screen.png" width="100%" alt="">
+                        
                     </p> 
-                    <h4><a href="{{url('/dashboard')}}">Commencer à Partager 😉</a></h4>
                 </div>
             </center>
         </div>

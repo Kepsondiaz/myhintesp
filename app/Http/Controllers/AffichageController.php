@@ -10,6 +10,7 @@ class AffichageController extends Controller
 {
    public function index()
    {
+      session()->flash('message', 'seule les personnes ayant accées au domaine esp.sn sont autorisées à créer un compte sur la platforme');
       return view('welcome');
    }
 }
