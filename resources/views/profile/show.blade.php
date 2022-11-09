@@ -6,11 +6,11 @@
     </x-slot>
 
     <div>
-        @if (Laravel\Fortify\Features::canUpdateProfileInformation())
+        {{-- @if (Laravel\Fortify\Features::canUpdateProfileInformation())
             @livewire('profile.update-profile-information-form')
 
             <x-jet-section-border />
-        @endif
+        @endif --}}
 
         @if (Laravel\Fortify\Features::enabled(Laravel\Fortify\Features::updatePasswords()))
             @livewire('profile.update-password-form')
@@ -24,7 +24,7 @@
             <x-jet-section-border />
         @endif
 
-        @livewire('profile.logout-other-browser-sessions-form')
+        {{-- @livewire('profile.logout-other-browser-sessions-form') --}}
 
         @if (Laravel\Jetstream\Jetstream::hasAccountDeletionFeatures())
             <x-jet-section-border />

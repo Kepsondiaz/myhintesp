@@ -31,19 +31,19 @@
     <div class="container-fluid fixed-top p-4">
         <div class="col-12">
             <div class="d-flex justify-content-end">
-                {{-- @if (Route::has('login'))
+                 @if (Route::has('login'))
                     <div class="">
                         @auth
                             <a href="{{ url('/dashboard') }}" class="text-muted">Dashboard</a>
                         @else
-                            <a href="{{ route('login') }}" class="btn btn-primary">Log in</a>
+                            <a href="{{ route('login') }}" class="btn btn-primary">Se Connecter</a>
 
                             @if (Route::has('register'))
-                                <a href="{{ route('register') }}" class="btn btn-primary">Register</a>
+                                <a href="{{ route('register') }}" class="btn btn-primary">S'Inscrire</a>
                             @endif
                         @endif
                     </div>
-                @endif --}}
+                @endif 
             </div>
             <center class="top-100">
                 <div class="position-absolute top-100 start-50 translate-middle-x">
