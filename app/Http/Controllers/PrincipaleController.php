@@ -16,7 +16,7 @@ class PrincipaleController extends Controller
                 // requette pour retrouver les fichiers en fonction du dpt, de la filiere, de la matiere, du niveau et du semestre
                 if(strtolower($request->departement) && strtolower($request->filieres) && strtolower($request->matieres) && strtolower($request->niveaux) && strtolower($request->semestres))
                 {
-                        // dd("salut");
+                        
                           $tmp_fichiers = DB::table('tmp_fichiers')
                           ->join('matieres', 'matieres.id', '=', 'tmp_fichiers.matiere_id')
                           ->join('filieres', 'filieres.id', '=', 'matieres.filiere_id')
@@ -28,6 +28,7 @@ class PrincipaleController extends Controller
                           ->where('matieres.nom_matiere', $request->matieres)
                           ->where('matieres.niveau_matiere', $request->niveaux)
                           ->where('matieres.semestres', $request->semestres)
+                          ->inRandomOrder()
                           ->paginate(15);
                           return view('dashboard', compact('tmp_fichiers'));     
                 }
@@ -35,7 +36,6 @@ class PrincipaleController extends Controller
                 // requette pour retrouver les fichiers en fonction de la filiere, de la matiere, du niveau et du semestre
                 if(strtolower($request->filieres) && strtolower($request->matieres) && strtolower($request->niveaux) && strtolower($request->semestres))
                 {
-                        //  dd("salut");
                           $tmp_fichiers = DB::table('tmp_fichiers')
                           ->join('matieres', 'matieres.id', '=', 'tmp_fichiers.matiere_id')
                           ->join('filieres', 'filieres.id', '=', 'matieres.filiere_id')
@@ -46,6 +46,7 @@ class PrincipaleController extends Controller
                           ->where('matieres.nom_matiere', $request->matieres)
                           ->where('matieres.niveau_matiere', $request->niveaux)
                           ->where('matieres.semestres', $request->semestres)
+                          ->inRandomOrder()
                           ->paginate(15);
                           return view('dashboard', compact('tmp_fichiers'));     
                 }
@@ -62,6 +63,7 @@ class PrincipaleController extends Controller
                           ->where('departements.nom', $request->departement)
                           ->where('filieres.intitule', $request->filieres)
                           ->where('matieres.nom_matiere', $request->matieres)
+                          ->inRandomOrder()
                           ->paginate(15);
                           return view('dashboard', compact('tmp_fichiers'));     
                 }
@@ -77,6 +79,7 @@ class PrincipaleController extends Controller
                           ->where('valider', 1)
                           ->where('filieres.intitule', $request->filieres)
                           ->where('matieres.nom_matiere', $request->matieres)
+                          ->inRandomOrder()
                           ->paginate(15);
                           return view('dashboard', compact('tmp_fichiers'));     
                 }
@@ -92,6 +95,7 @@ class PrincipaleController extends Controller
                                ->where('departements.nom', strtolower($request->departement))
                                ->where('matieres.niveau_matiere', strtolower($request->niveaux))
                                ->where('valider', 1)
+                               ->inRandomOrder()
                                ->paginate(15);
                                return view('dashboard', compact('tmp_fichiers'));
                                
@@ -108,6 +112,7 @@ class PrincipaleController extends Controller
                                ->where('departements.nom', strtolower($request->departement))
                                ->where('filieres.intitule', $request->filieres)
                                ->where('valider', 1)
+                               ->inRandomOrder()
                                ->paginate(15);
                                return view('dashboard', compact('tmp_fichiers'));
                                
@@ -124,6 +129,7 @@ class PrincipaleController extends Controller
                                ->where('departements.nom', strtolower($request->departement))
                                ->where('matieres.nom_matiere', $request->matieres)
                                ->where('valider', 1)
+                               ->inRandomOrder()
                                ->paginate(15);
                                return view('dashboard', compact('tmp_fichiers'));
                                
@@ -140,6 +146,7 @@ class PrincipaleController extends Controller
                                ->select('departements.*','filieres.*','matieres.*', 'tmp_fichiers.*')
                                ->where('departements.nom', strtolower($request->departement))
                                ->where('valider', 1)
+                               ->inRandomOrder()
                                ->paginate(15);
                         //        dd($tmp_fichiers);
                                return view('dashboard', compact('tmp_fichiers'));
@@ -155,6 +162,7 @@ class PrincipaleController extends Controller
                         ->select('departements.*','filieres.*','matieres.*', 'tmp_fichiers.*')
                         ->where('filieres.intitule', strtolower($request->filieres))
                         ->where('valider', 1)
+                        ->inRandomOrder()
                         ->paginate(15);
                         return view('dashboard', compact('tmp_fichiers'));
                 }
@@ -169,6 +177,7 @@ class PrincipaleController extends Controller
                         ->select('departements.*','filieres.*','matieres.*', 'tmp_fichiers.*')
                         ->where('matieres.nom_matiere', strtolower($request->matieres))
                         ->where('valider', 1)
+                        ->inRandomOrder()
                         ->paginate(15);
                         return view('dashboard', compact('tmp_fichiers'));
                 }
@@ -183,6 +192,7 @@ class PrincipaleController extends Controller
                         ->select('departements.*','filieres.*','matieres.*', 'tmp_fichiers.*')
                         ->where('matieres.niveau_matiere', strtolower($request->niveaux))
                         ->where('valider', 1)
+                        ->inRandomOrder()
                         ->paginate(15);
                         return view('dashboard', compact('tmp_fichiers')); 
                 }
@@ -197,6 +207,7 @@ class PrincipaleController extends Controller
                         ->select('departements.*','filieres.*','matieres.*', 'tmp_fichiers.*')
                         ->where('matieres.semestres', strtolower($request->semestres))
                         ->where('valider', 1)
+                        ->inRandomOrder()
                         ->paginate(15);
                         return view('dashboard', compact('tmp_fichiers')); 
                 }
@@ -209,8 +220,10 @@ class PrincipaleController extends Controller
                 ->join('departements', 'departements.id', '=', 'filieres.departement_id')
                 ->select('departements.*','filieres.*','matieres.*', 'tmp_fichiers.*')
                 ->where('valider', 1)
-                ->orderBy('tmp_fichiers.created_at', 'desc')
-                ->paginate(15);
+                ->inRandomOrder()
+                ->paginate(15);                
+                // ->orderBy('tmp_fichiers.created_at', 'desc')
+
                 return view('dashboard', compact('tmp_fichiers'));
         }
 
