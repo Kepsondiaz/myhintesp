@@ -11,7 +11,7 @@
 
             @if (session('status') == 'verification-link-sent')
                 <div class="alert alert-success" role="alert">
-                    {{ __('Un nouveau lien de vérification a été envoyé à l’adresse courriel que vous avez fournie pendant l’inscription.') }}
+                    {{ __('Un nouveau lien de vérification a été envoyé à l’adresse courriel que vous avez fournie pendant l’inscription.  NB: N\'oubliez pas de consulter vos spam pour retrouver ce mail') }}
                 </div>
             @endif
 
