@@ -48,7 +48,7 @@
             <center class="top-100">
                 <div class="position-absolute top-100 start-50 translate-middle-x">
                     <p>
-                        <h1>myhintesp</h1>
+                        <h1>myhintesp la plateforme idéale pour <strong>Réviser</strong></h1>
                         <br>
                         @if (session()->has('message'))
                         <div class="alert alert-danger" role="alert">
