@@ -43,10 +43,12 @@
                     <option value="dut2-dst2">DUT2-DST2</option>
                     <option value="licence">LICENCE</option>
                     <option value="dic1">DIC1</option>
-                    <option value="master1">MASTER1</option>
                     <option value="dic2">DIC2</option>
-                    <option value="master2">MASTER2</option>
                     <option value="dic3">DIC3</option>
+                    <option value="master1">MASTER1</option>
+                    <option value="master2">MASTER2</option>
+                    <option value="dit1">DIT1</option>
+                    <option value="dit2">DIT2</option>
                 </select>
             </div>
             <div class="mb-3">
