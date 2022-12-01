@@ -53,7 +53,7 @@ class Uploader extends Controller
 
                     try
                     {
-                         if($extenFileUpload == 'pdf' || $extenFileUpload == 'PDF' || $extenFileUpload == 'zip' || $extenFileUpload == 'ZIP' || $extenFileUpload == 'png' || $extenFileUpload == 'PNG' || $extenFileUpload == 'jpg' || $extenFileUpload == 'JPG')
+                         if($extenFileUpload == 'pdf' || $extenFileUpload == 'PDF' || $extenFileUpload == 'zip' || $extenFileUpload == 'ZIP' || $extenFileUpload == 'png' || $extenFileUpload == 'PNG' || $extenFileUpload == 'jpg' || $extenFileUpload == 'JPG' || $extenFileUpload == 'jpeg' || $extenFileUpload == 'jpeg')
                          {
                               // conndition pour uploader un fichier
                                   if($sizeFileUpload <= 4000000)
