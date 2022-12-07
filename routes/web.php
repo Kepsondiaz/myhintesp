@@ -56,7 +56,7 @@ use PhpParser\Node\Expr\FuncCall;
      Route::get('/search', [PrincipaleController::class, 'search']);
      Route::post('/search', [PrincipaleController::class, 'search']);
 
-     Route::prefix('admin')->group(function(){
+     Route::prefix('tclqt')->group(function(){
          Route::resource('/dashboard', 'App\Http\Controllers\adminController');
          Route::get('/valider/{id}', [validerTmpFichiers::class, 'valider'])->name('valider');
          Route::get('/supprimer/{id}', [validerTmpFichiers::class, 'supprimer'])->name('supprimer');
