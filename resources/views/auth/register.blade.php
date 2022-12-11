@@ -58,7 +58,7 @@
 
                 <div class="mb-0">
                     <div class="d-flex justify-content-end align-items-baseline">
-                        <a class="text-muted me-3 text-decoration-none" href="{{ route('login') }}">
+                        <a class="text-danger me-3 text-decoration-none" href="{{ route('login') }}">
                             {{ __('Déja Inscrit?') }}
                         </a>
 
