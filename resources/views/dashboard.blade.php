@@ -51,7 +51,53 @@
                     </div>
                 </form>
                 <br>
-            <table class="table align-middle mb-0 bg-white">
+                @foreach ($tmp_fichiers as $tmp_fichier)
+                    <div class="card">
+                        <div class="card-header">
+                            
+                        </div>
+                        <div class="card-body">
+                        <h5 class="card-title"><strong>{{$tmp_fichier->tmp_nom_fichier}}</strong></h5>
+                        {{-- <p class="card-text"></p>
+                        <p class="card-text">{{$tmp_fichier->niveau_matiere}}</p>
+                        <p class="card-text"></p>
+                        <p class="card-text">{{$tmp_fichier->niveau_matiere}}</p>
+                        <p class="card-text">{{$tmp_fichier->nom}}</p> --}}
+                        <div class="row">
+                            <div class="col-sm-4">
+                              <div class="card">
+                                <div class="card-body">
+                                  <h5 class="card-title">{{$tmp_fichier->nom_matiere}}</h5>
+                                  <p class="card-text">{{$tmp_fichier->semestres}}</p>
+                            
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-sm-4">
+                              <div class="card">
+                                <div class="card-body">
+                                  <h5 class="card-title">{{$tmp_fichier->niveau_matiere}}</h5>
+                                  <p class="card-text">{{$tmp_fichier->intitule}}</p>
+                            
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="card">
+                                  <div class="card-body">
+                                    <h5 class="card-title">{{$tmp_fichier->nom}}</h5>
+                              
+                                  </div>
+                                </div>
+                              </div>
+                          </div>
+                        <br>
+                        <a href=" {{url('/download', $tmp_fichier->tmp_url_fichier)}} " class="btn btn-success">Télécharger</a>
+                        </div>
+                    </div>
+                    <br>
+                @endforeach
+            {{-- <table class="table align-middle mb-0 bg-white">
                 <thead class="thead-primary">
                     <tr>
                         <th scope="col"></th>
@@ -82,7 +128,7 @@
                                         src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/PDF_file_icon.svg/langfr-800px-PDF_file_icon.svg.png"
                                         alt=""
                                         style="width: 25px; height: 25px"
-                                        {{-- class="rounded-circle" --}}
+                                    
                                         />
                                 <div class="ms-3">
                             </th>
@@ -95,7 +141,7 @@
                             <td><a href=" {{url('/download', $tmp_fichier->tmp_url_fichier)}} " class="btn btn-success">Télécharger</a></td>               </tr>
                     @endforeach 
                 </tbody>
-            </table>
+            </table> --}}
     </div>
     <br>
     <span>{{ $tmp_fichiers->links()}}</span> 
