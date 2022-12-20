@@ -51,6 +51,21 @@
                     </div>
                 </form>
                 <br>
+                @if (count($tmp_fichiers)==0)
+                <div class="card text-center bg-danger text-white">
+                    <div class="card-header">
+                      Featured
+                    </div>
+                    <div class="card-body">
+                      <h5 class="card-title">Aucun hints n'est disponible concernant vôtre rechercher.</h5>
+                      <p class="card-text">Souhaitez-vous ajouter un hint</p>
+                      <a href={{url("/upload")}} class="btn btn-primary">Uploader un hint.</a>
+                    </div>
+                    {{-- <div class="card-footer text-muted">
+                      2 days ago
+                    </div> --}}
+                  </div>
+                @endif
                 @foreach ($tmp_fichiers as $tmp_fichier)
                     <div class="card">
                         <div class="card-header">
@@ -58,11 +73,6 @@
                         </div>
                         <div class="card-body">
                         <h5 class="card-title"><strong>{{$tmp_fichier->tmp_nom_fichier}}</strong></h5>
-                        {{-- <p class="card-text"></p>
-                        <p class="card-text">{{$tmp_fichier->niveau_matiere}}</p>
-                        <p class="card-text"></p>
-                        <p class="card-text">{{$tmp_fichier->niveau_matiere}}</p>
-                        <p class="card-text">{{$tmp_fichier->nom}}</p> --}}
                         <div class="row">
                             <div class="col-sm-4">
                               <div class="card">
@@ -97,51 +107,6 @@
                     </div>
                     <br>
                 @endforeach
-            {{-- <table class="table align-middle mb-0 bg-white">
-                <thead class="thead-primary">
-                    <tr>
-                        <th scope="col"></th>
-                        <th scope="col">Nom du fichier</th>
-                        <th scope="col">Matieres</th>
-                        <th scope="col">Semestres</th>
-                        <th scope="col">Niveau</th>
-                        <th scope="col">Filieres</th>
-                        <th scope="col">Departement</th>
-                        <th scope="col">Télécharger</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @if (count($tmp_fichiers)==0)
-                    <tr>
-                        <td>
-                            <center>
-                                <p class="btn btn-danger">Aucun hints n'est disponible concernant vôtre rechercher. Souhaitez-vous ajouter un hint <a href="{{url("/upload")}}">Uploader un hint</a></p>
-                            </center>
-                        </td>
-                    </tr>
-                    @endif
-                    @foreach ($tmp_fichiers as $tmp_fichier)
-                        <tr>
-                            <th>
-                                <div class="d-flex align-items-center">
-                                    <img
-                                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/PDF_file_icon.svg/langfr-800px-PDF_file_icon.svg.png"
-                                        alt=""
-                                        style="width: 25px; height: 25px"
-                                    
-                                        />
-                                <div class="ms-3">
-                            </th>
-                            <td>{{$tmp_fichier->tmp_nom_fichier}}</td>
-                            <td>{{$tmp_fichier->nom_matiere}}</td>
-                            <td>{{$tmp_fichier->semestres}}</td>
-                            <td>{{$tmp_fichier->niveau_matiere}}</td>
-                            <td>{{$tmp_fichier->intitule}}</td>
-                            <td>{{$tmp_fichier->nom}}</td>
-                            <td><a href=" {{url('/download', $tmp_fichier->tmp_url_fichier)}} " class="btn btn-success">Télécharger</a></td>               </tr>
-                    @endforeach 
-                </tbody>
-            </table> --}}
     </div>
     <br>
     <span>{{ $tmp_fichiers->links()}}</span> 
