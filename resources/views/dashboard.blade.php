@@ -53,9 +53,6 @@
                 <br>
                 @if (count($tmp_fichiers)==0)
                 <div class="card text-center bg-danger text-white">
-                    <div class="card-header">
-                      Featured
-                    </div>
                     <div class="card-body">
                       <h5 class="card-title">Aucun hints n'est disponible concernant vôtre rechercher.</h5>
                       <p class="card-text">Souhaitez-vous ajouter un hint</p>
