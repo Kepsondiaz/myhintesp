@@ -59,8 +59,7 @@ class Uploader extends Controller
                                   if($sizeFileUpload <= 4000000)
                                   {
                                    //     $fileName = time().'.'.$extenFileUpload;
-                                   $fileName = $nameFileUpload.'.'.$extenFileUpload;
-                                       $request->fichier->move('myhintesp_public_doc_tmp', $fileName);
+                                       $request->fichier->move('myhintesp_public_doc_tmp', $nameFileUpload);
                                    //     $request->fichier->move('myhintesp_public_doc', $fileName);
                                         //  requête insertion d'un fichier dans la base de donnée
                                         // DB::table('tmp_fichiers')->insert([
@@ -73,7 +72,7 @@ class Uploader extends Controller
                                         //      'created_at' => $date_courante,
                                         // ]);
                                         $tmp_fichiers= tmp_fichiers::create([
-                                             'tmp_url_fichier' => $fileName,
+                                             'tmp_url_fichier' => $nameFileUpload,
                                              'tmp_nom_fichier' => strtolower($nameFileUpload),
                                              'tmp_size_fichier' => $sizeFileUpload,
                                              'valider' => 0,
