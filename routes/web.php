@@ -42,9 +42,9 @@ use PhpParser\Node\Expr\FuncCall;
      Route::post('/search', [PrincipaleController::class, 'search']);
 
      Route::prefix('tclqt')->group(function(){
-         Route::resource('/dashboard', 'App\Http\Controllers\adminController');
-         Route::get('/valider/{id}', [validerTmpFichiers::class, 'valider'])->name('valider');
-         Route::get('/supprimer/{id}', [validerTmpFichiers::class, 'supprimer'])->name('supprimer');
+         Route::get('/dashboard', 'App\Http\Controllers\adminController@index');
+         Route::get('/valider/{id}', [adminController::class, 'valider'])->name('valider');
+         Route::get('/supprimer/{id}', [adminController::class, 'supprimer'])->name('supprimer');
      });
  });
 
