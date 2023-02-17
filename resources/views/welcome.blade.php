@@ -102,13 +102,13 @@
                 </div>
             </form>
             <br>
-            @if (count($tmp_fichiers)==0)
+            @if (count($tmp_fichiers) == 0)
             <div class="card text-center bg-danger text-white">
                 <div class="card-body">
                   <h5 class="card-title">Aucun hints n'est disponible concernant vôtre rechercher.</h5>
                   <p class="card-text">Souhaitez-vous ajouter un hint</p>
                   <a href={{url("/upload")}} class="btn btn-primary">Uploader un hint.</a>
-                </div>
+            </div>
                 {{-- <div class="card-footer text-muted">
                   2 days ago
                 </div> --}}
