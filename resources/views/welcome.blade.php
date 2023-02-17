@@ -11,6 +11,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
 
     <!-- Styles -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
     <style>
@@ -27,76 +29,138 @@
     </style>
 </head>
 <body>
- <header>
+<header>
     <nav class="navbar navbar-expand-md navbar-light bg-white border-bottom sticky-top-10">
-        <p> </p>
-        <p><p> 
-        </p> </p>
-    </nav>
-    <div class="container-fluid fixed-top p-4">
-        {{-- <div class="col-12">
-            <div class="d-flex justify-content-end">
-                 @if (Route::has('login'))
-                    <div class="">
-                        @auth
-                            <a href="{{ url('/dashboard') }}" class="text-muted">Dashboard</a>
-                        @else
-                            <a href="{{ route('login') }}" class="btn btn-primary">Se Connecter</a>
-
-                            @if (Route::has('register'))
-                                <a href="{{ route('register') }}" class="btn btn-primary">S'Inscrire</a>
-                            @endif
-                        @endif
-                    </div>
-                @endif 
-            </div> --}}
-            <center class="top-50">
-                <div class="position-absolute top-100 start-50 translate-middle-x">
-                    <p>
-                        <h1>myhintesp la plateforme idéale pour <strong>Réviser</strong></h1>
-                        <br>
-                        @if (session()->has('message'))
-                        <div class="alert alert-danger" role="alert">
-                            {{session()->get('message')}}
-                        </div>  
-                    @endif
-                        <img src="images/screen.png" width="100%" alt="">
-                    </p> 
-                    <div class="d-grid gap-2 d-md-flex">
-                        <a class="btn btn-primary btn-lg px-4 me-md-2" href="{{url('/upload')}}">Uploader</a>
-                        <a class="btn btn-outline-secondary btn-lg px-4 me-md-2" href="{{url('/dashboard')}}">voir les fichiers</a>
-                    </div>
+        <div class="modal fade" id="LoginBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">MYHINTESP</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-            </center>
-        </div>
-    </div>
-</header>
-<footer class="text-center text-lg-start bg-white text-muted">
-    <p> </p>
-</footer>
-
-    
-
-
-{{-- <div class="card-body text-small">
-    <div class="container col-xxl-8 px-4 py-5">
-        <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
-          <div class="col-10 col-sm-8 col-lg-6">
-            <img src="/images/partage.png" class="img-fluid fondecran img-responsive" alt="" width="100%" height="100%">
-          </div>
-          <div class="col-lg-6">
-            <h2 class="display-5 fw-bold lh-1 mb-3">myhintesp, la plateforme idéale pour Réviser</h2>
-            <p class="lead text-danger">.Seules les personnes ayant un mail <strong>@esp.sn</strong> sont autorisées à créer un compte dans la plateforme</p>
-            <div class="d-grid gap-2 d-md-flex justify-content-md-start">
-            <a class="btn btn-primary btn-lg px-4 me-md-2" href="{{url('/upload')}}">Uploader</a>
-            <a class="btn btn-outline-secondary btn-lg px-4 me-md-2" href="{{url('/dashboard')}}">voir les fichiers</a>
+                <div class="modal-body">
+                  <strong>myhintesp, la plateforme idéale pour réviser</strong>
+                </div>
+                <div class="modal-footer">
+                  <a href="/login" class="btn btn-secondary" >Se Connecter</a>
+                  <a href="/register" class="btn btn-primary">S'inscrire</a>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-      </div>
-</div> --}}
-
-
-   
+        <p></p>
+        <p> <p> 
+        </p> </p>
+        </p> </p>
+    </nav>
+</header>
+    {{-- <div class="container-fluid fixed-top p-4"> --}}
+        <div class="container h-100 mt-2">
+            <form action="" method="GET" class="row row-cols-lg-auto g-3">
+                @csrf
+                <div class="col-sm-2">
+                    <select class="form-control" name="departement" id="departements">
+                        <option value="">choisir un Départements*</option>
+                        <option value="Génie Chimique et Biologie Appliquée">Génie Chimique et Biologie Appliquée</option>
+                        <option value="Génie Civile">Génie Civile</option>
+                        <option value="Génie Electrique">Génie Electrique</option>
+                        <option value="Génie Informatique">Génie Informatique</option>
+                        <option value="Génie Mécanique">Génie Mécanique</option>
+                        <option value="Gestion">Gestion</option>
+                    </select> 
+                </div>
+                <div class="col-sm-2">
+                    <input class="form-control" type="text" name="filieres" id="filieres" placeholder="entrer une filière">
+                </div>
+                <div class="col-sm-2">
+                    <input class="form-control" type="text" name="matieres" id="matieres" placeholder="entrer une matière">
+                </div>
+                <div class="col-sm-2">
+                    <select name="niveaux" id="niveaux" class="form-control" >
+                        <option value="">choisir un Niveau*</option>
+                        <option value="dut1-dst1">DUT1-DST1</option>
+                        <option value="dut2-dst2">DUT2-DST2</option>
+                        <option value="licence">LICENCE</option>
+                        <option value="dic1">DIC1</option>
+                        <option value="dic2">DIC2</option>
+                        <option value="dic3">DIC3</option>
+                        <option value="master1">MASTER1</option>
+                        <option value="master2">MASTER2</option>
+                        <option value="dit1">DIT1</option>
+                        <option value="dit2">DIT2</option>
+                    </select>
+                </div>
+                <div class="col-sm-2">
+                    <select name="semestres" id="semestres" class="form-control">
+                        <option value="">choisir une Semestre*</option>
+                        <option value="semestre1">Semestre 1</option>
+                        <option value="semestre2">Semestre 2</option>
+                    </select> 
+                </div>
+                <div class="col-sm-2">
+                    <input class="btn btn-success" type="submit" value="Rechercher">
+                </div>
+            </form>
+            <br>
+            @if (count($tmp_fichiers)==0)
+            <div class="card text-center bg-danger text-white">
+                <div class="card-body">
+                  <h5 class="card-title">Aucun hints n'est disponible concernant vôtre rechercher.</h5>
+                  <p class="card-text">Souhaitez-vous ajouter un hint</p>
+                  <a href={{url("/upload")}} class="btn btn-primary">Uploader un hint.</a>
+                </div>
+                {{-- <div class="card-footer text-muted">
+                  2 days ago
+                </div> --}}
+              </div>
+            @endif
+            @foreach ($tmp_fichiers as $tmp_fichier)
+                <div class="card">
+                    <div class="card-header">
+                        
+                    </div>
+                    <div class="card-body">
+                    <h5 class="card-title"><strong>{{$tmp_fichier->tmp_nom_fichier}}</strong></h5>
+                    <div class="row">
+                        <div class="col-sm-4">
+                          <div class="card">
+                            <div class="card-body">
+                              <h5 class="card-title">{{$tmp_fichier->nom_matiere}}</h5>
+                              <p class="card-text">{{$tmp_fichier->semestres}}</p>
+                        
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-sm-4">
+                          <div class="card">
+                            <div class="card-body">
+                              <h5 class="card-title">{{$tmp_fichier->niveau_matiere}}</h5>
+                              <p class="card-text">{{$tmp_fichier->intitule}}</p>
+                        
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="card">
+                              <div class="card-body">
+                                <h5 class="card-title">{{$tmp_fichier->nom}}</h5>
+                          
+                              </div>
+                            </div>
+                          </div>
+                      </div>
+                    <br>
+                    @if (auth()->check())
+                        <a href=" {{url('/download', $tmp_fichier->tmp_url_fichier)}} " class="btn btn-success">Télécharger</a>
+                    @else
+                        <a href="#" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#LoginBackdrop">Télécharger</a>
+                    @endif
+                    </div>
+                </div>
+                <br>
+            @endforeach
+    </div>
+    <br>
+    <span>{{ $tmp_fichiers->links()}}</span> 
 </body>
 </html>
